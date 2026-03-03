@@ -1,0 +1,16 @@
+{
+  "name": "lostandfound-backend",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.0.0",
+    "dotenv": "^17.0.0",
+    "express": "^5.0.0",
+    "mysql2": "^3.0.0"
+  }
+}

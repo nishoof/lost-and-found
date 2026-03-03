@@ -1,0 +1,165 @@
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1f2933;
+  background-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: min(720px, 92vw);
+  padding: 48px 0 64px;
+}
+
+header {
+  margin-bottom: 32px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+header p {
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+  background: #ffffff;
+  margin-bottom: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+label {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+input,
+textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #ffffff;
+  color: #1f2933;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+button.secondary {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+button.danger {
+  background: #ee0000;
+  color: #ffffff;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 16px;
+}
+
+.item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.item-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.item-description {
+  margin-top: 8px;
+  color: #374151;
+  white-space: pre-wrap;
+}
+
+.edit-actions {
+  margin-top: 10px;
+}
+
+.empty {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  #app {
+    padding: 32px 0 48px;
+  }
+
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
