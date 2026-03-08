@@ -27,6 +27,7 @@ app.get("/items", async (_req, res) => {
     );
     res.json(rows);
   } catch (error) {
+    console.error("Failed to fetch items", error);
     res.status(500).json({ error: "Failed to fetch items" });
   }
 });
@@ -46,7 +47,8 @@ app.get("/items/:id", async (req, res) => {
       return res.status(404).json({ error: "Not found" });
     }
     return res.json(rows[0]);
-  } catch (_error) {
+  } catch (error) {
+    console.error(`Failed to fetch item ${id}`, error);
     return res.status(500).json({ error: "Failed to fetch item" });
   }
 });
@@ -68,7 +70,8 @@ app.post("/items", async (req, res) => {
       [result.insertId]
     );
     return res.status(201).json(rows[0]);
-  } catch (_error) {
+  } catch (error) {
+    console.error("Failed to create item", error);
     return res.status(500).json({ error: "Failed to create item" });
   }
 });
@@ -100,7 +103,8 @@ app.put("/items/:id", async (req, res) => {
       [id]
     );
     return res.json(rows[0]);
-  } catch (_error) {
+  } catch (error) {
+    console.error(`Failed to update item ${id}`, error);
     return res.status(500).json({ error: "Failed to update item" });
   }
 });
@@ -117,7 +121,8 @@ app.delete("/items/:id", async (req, res) => {
       return res.status(404).json({ error: "Not found" });
     }
     return res.status(204).send();
-  } catch (_error) {
+  } catch (error) {
+    console.error(`Failed to delete item ${id}`, error);
     return res.status(500).json({ error: "Failed to delete item" });
   }
 });
